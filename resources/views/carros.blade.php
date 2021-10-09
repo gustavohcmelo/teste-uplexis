@@ -5,7 +5,7 @@
     <a href="{{ route('home') }}" class="btn btn-default">Página Inicial</a>
 </div>
 <div class="container py-3 d-flex flex-wrap">
-    @if(isset($carros))
+    @if(count($carros) > 0)
         @foreach($carros as $carro)
         <div class="col-md-6 p-2">
             <div class="card">
@@ -43,6 +43,11 @@
             </div>
         </div>
         @endforeach
+    @else
+        <div class="text-center py-4 col-md-12">
+            <i class="las la-car"></i>
+            <h3 class="text-secondary">Não existem veículos salvos.</h3>
+        </div>
     @endif
 </div>
 <script type="application/javascript">       
@@ -53,10 +58,16 @@ function remove(id){
         }
     })
     .then((response) => {
-        console.log(response)
+        Swal.fire('Sucesso!', response.data.message,'success')
+        .then(function(){ 
+        window.location.reload();
+        });
     })
     .catch((error) => {
-        console.log(error)
+        Swal.fire('Opsss!', 'Falha na exclusão. Tente Novamente.','error')
+        .then(function(){ 
+        window.location.reload();
+        });
     })
 }
 </script>

@@ -17,3 +17,10 @@
         props: ['route']
     }
 </script>
+
+<style scoped>
+
+.form-control {
+    text-transform: uppercase;
+}
+</style>

@@ -69,4 +69,10 @@ export default {
     font-weight: 600;
     color: #4535d9;
 }
+
+@media (max-width:991px){
+    .counter{
+        width: 90%;
+    }
+}
 </style>
