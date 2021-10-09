@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Carros;
+use App\Models\Carro;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+
+use function Psy\debug;
 
 class CarrosController extends Controller
 {
     public function index(Request $request)
     {
-        $carros = Carros::orderBy('nome_veiculo')->get();
+        $carros = Carro::orderBy('nome_veiculo')->get();
 
         return view('carros', [
             'carros' => $carros
@@ -58,7 +61,7 @@ class CarrosController extends Controller
     
                 $cars[$keyArticle]['description'] = array_combine($item_name, $descriptions);
 
-                $carros = Carros::updateOrCreate(
+                $carros = Carro::updateOrCreate(
                     ['link' => $cars[$keyArticle]['link']],
                     [
                         'user_id' => Auth::user()->id,
@@ -79,5 +82,22 @@ class CarrosController extends Controller
         return view('home', [
             'founds' => $founds
         ]);
+    }
+
+    public function destroy($carro)
+    {
+        try {
+
+            $carros = Carro::find($carro);
+            $carros->delete();
+    
+            return response()->json(['message' => 'Carro removido com sucesso!']);
+
+        } catch (\Throwable $th) {
+
+            Log:debug(['Falha no processo de exclusão:' => $th]);
+            return response()->json(['error' => 'Falha durante o processo de exclusão. Tente novamente ou contate o administrador do sistema!'], 422);
+
+        }
     }
 }

@@ -7,7 +7,7 @@
 <div class="container py-3 d-flex flex-wrap">
     @if(isset($carros))
         @foreach($carros as $carro)
-        <div class="col-md-6 p-2" data-id="{{ $carro->id }}">
+        <div class="col-md-6 p-2">
             <div class="card">
                 <h5 class="card-header">{{ $carro->nome_veiculo }}</h5>
                 <div class="card-body">
@@ -36,7 +36,7 @@
                             <a href="{{ $carro->link }}" target="_blank" class="mt-3 btn btn-outline-primary center d-block">Ver detalhes</a>
                         </div>
                         <div class="col-md-6">
-                            <a href="{{ $carro->link }}" target="_blank" class="mt-3 btn btn-outline-danger center d-block">Remover</a>
+                            <a target="_blank"  data-id="{{ $carro->id }}" onclick="remove(this.dataset.id)" class="mt-3 btn btn-outline-danger center d-block">Remover</a>
                         </div>
                     </div>
                 </div>
@@ -45,4 +45,19 @@
         @endforeach
     @endif
 </div>
+<script type="application/javascript">       
+function remove(id){
+    axios.delete('{{ url("carros/destroy") }}/' + id, {
+        headers:{
+            'CSRF_TOKEN': '{{ csrf_token() }}'
+        }
+    })
+    .then((response) => {
+        console.log(response)
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}
+</script>
 @endsection
