@@ -7,6 +7,46 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+## Teste Técnico Uplexis
+
+> Sobre o projeto
+
+    Sistema que realiza busca de dados dos veículos fornecidos pela página especializada https://www.questmultimarcas.com.br/
+
+> Instalação
+
+    Para eficaz instalação do sistema, favor seguir os passos abaixo:
+
+ >* https://github.com/gustavohcmelo/teste-uplexis.git
+
+ >* composer install
+
+ >* npm install
+
+ >* configurar arquivo .env com as informações de conexão ao DB
+
+ >* Gerar nova chave com o comando: ```php artisan key:generate```
+
+ >* Realizar as migrações do banco: ```php artisan migrate --seed```
+
+ >>ATENÇÃO: Caso algum erro seja apresentado durante as migrações verifique a configuração de conexão no arquivo config > database.php
+
+ >* Iniciar Server: ```php artisan server```
+
+    Todo o sistema foi desenvolvido com base nas versões atualizadas das devidas tecnologias. Seguem os requisitos de utilização:
+
+>VueJS @vue/cli 4.5.13
+
+>PHP 8.0.10
+
+>NPM 6.14.15
+
+>NodeJS 14.17.6
+
+>Laravel Framework 8.63.0
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
