@@ -79,6 +79,11 @@
     padding-left: 0px;
 }
 
+.page-item.active .page-link {
+    background-color: #4535d9;
+    border-color: #4535d9;
+}
+
 @media (max-width: 991px){
     .form-text{
         padding-left: 15px;

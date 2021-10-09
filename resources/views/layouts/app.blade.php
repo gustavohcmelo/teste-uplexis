@@ -20,6 +20,12 @@
 </head>
 <body>
     <div id="app">
+        @if ($message = Session::get('error'))
+            <div class="alert alert-danger alert-block">
+                <button type="button" class="close" data-dismiss="alert">×</button>    
+                <strong>{{ $message }}</strong>
+            </div>
+        @endif
         <nav class="navbar navbar-expand-md navbar-light bg-gradient shadow-sm">
             <div class="container">
                 <a class="text-white navbar-brand" href="{{ url('/') }}">

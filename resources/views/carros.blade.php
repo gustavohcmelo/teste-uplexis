@@ -50,6 +50,9 @@
         </div>
     @endif
 </div>
+<div class="d-flex justify-content-center">
+    {{ $carros->links() }}
+</div>
 <script type="application/javascript">       
 function remove(id){
     axios.delete('{{ url("carros/destroy") }}/' + id, {

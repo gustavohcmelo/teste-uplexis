@@ -38314,7 +38314,7 @@ var staticRenderFns = [
       _c(
         "small",
         { staticClass: "form-text text-muted", attrs: { id: "formtext" } },
-        [_vm._v("Digite alguma caracteristica do carro que deseja encontrar.")]
+        [_vm._v("Digite a marca do veículo que deseja encontrar.")]
       ),
       _vm._v(" "),
       _c(
