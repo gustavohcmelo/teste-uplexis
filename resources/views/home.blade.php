@@ -1,23 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <search route="{{ route('carros.store') }}"></search>
+    @if(isset($founds))
+    <counter list="{{ route('carros.index') }}" home="{{ route('home') }}" founds="{{ $founds }}"></counter>
+    @endif
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+    @if(!isset($founds))
+    <div class="text-center py-5">
+        <i class="d-block las la-car"></i>
+        <a class="btn btn-default" href="{{ route('carros.index') }}">Ver todos os carros salvos</a>
     </div>
-</div>
+    @endif
 @endsection

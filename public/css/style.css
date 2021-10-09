@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.bg-gradient{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(74,21,187,1) 50%, rgba(0,228,255,1) 100%);
+}
+
+.form-control {
+    border: 2px solid #4535d9 !important;
+    border-radius: 50px !important;
+    padding: 25px;
+    text-transform: uppercase;
+}
+
+.form-text{
+    padding-left: 27px;
+    color: #4535d9 !important;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-default{
+    border: 1px solid #4535d9;
+    color:#4535d9;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+
+.card{
+    font-family: 'Roboto', sans-serif;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.card .card-header{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    border-bottom:1px solid #4535d9;
+    color:#4535d9;
+}
+
+.btn-search{
+    top: 3px;
+    right: 3px;
+    padding: 9px 11px;
+    border-radius: 50%;
+    border: 1px solid #4535d9;
+    background: #4535d9;
+}
+
+.btn-search i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.la-car{
+    font-size: 7rem;
+    color: #ccc;
+}
+
+#form-search input{
+    font-size: 1rem;
+}
+
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.descriptions div:nth-child(odd){
+    padding-left: 0px;
+}
+
+@media (max-width: 991px){
+    .form-text{
+        padding-left: 15px;
+        color: #4535d9 !important;
+    }
+
+    .descriptions div{
+        padding-left: 0px;
+    }
+}

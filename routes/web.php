@@ -15,4 +15,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('/carros')->group(function(){
+    Route::get('/', [App\Http\Controllers\CarrosController::class, 'index'])->name('carros.index');
+    Route::get('/store', [App\Http\Controllers\CarrosController::class, 'store'])->name('carros.store');
+});
